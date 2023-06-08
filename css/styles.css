@@ -1,0 +1,297 @@
+/* `styles are in descending order of HTML document */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* general variables */
+  --boxShadow: 0 0 5px rgb(250, 234, 230);
+  --boxShadow2: 0px 0px 50px rgba(150, 150, 150, 0.3);
+  --transition: all 0.3s linear;
+  --border: 2px solid rgb(28, 239, 137);
+  --border2: 2px solid rgb(239, 73, 170);
+
+  /* variables for this project */
+  --Lime-Green: hsl(163, 72%, 41%);
+  --Bright-Red: hsl(356, 69%, 56%);
+  --Light-Grey: hsl(217, 10%, 46%);
+  --White: hsl(0, 0%, 100%);
+  --Facebook: hsl(208, 92%, 53%);
+  --Twitter: hsl(203, 89%, 53%);
+  --Instagram: hsl(329, 70%, 58%);
+  /* --Instagram: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%)); */
+  --YouTube: hsl(348, 97%, 39%);
+
+  /* light theme */
+  --background: hsl(0, 0%, 100%);
+  --top-bg-pattern: hsl(225, 100%, 98%);
+  --card-bg: hsl(230, 50%, 96%);
+  --text: hsl(228, 12%, 44%);
+  --text2: hsl(230, 17%, 14%);
+  --toggle: linear-gradient(to right, hsl(230, 22%, 74%), hsl(230, 22%, 74%));
+  --hover-state: hsl(230, 22%, 89%);
+}
+
+/* dark theme */
+.dark-mode {
+  --background: hsl(230, 17%, 14%);
+  --card-bg: hsl(228, 28%, 20%);
+  --hover-state: hsl(229, 26%, 30%);
+  --text: hsl(228, 34%, 66%);
+  --text2: hsl(0, 0%, 100%);
+  --toggle: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+  --top-bg-pattern: hsl(232, 19%, 15%);
+}
+
+body {
+  background: var(--background);
+  display: grid;
+  font-family: "Inter", "Open Sans", Arial, Helvetica, sans-serif;
+  height: 100vh;
+  margin: 0;
+  place-items: center;
+  width: 100vw;
+}
+
+img {
+  object-fit: contain;
+}
+
+.main {
+  width: 80vw;
+  margin: 2rem 0;
+  /* transition: var(--transition); */
+}
+
+.header h2 {
+  margin: 5px 0;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--text2);
+}
+
+p {
+  color: var(--text);
+  font-weight: 700;
+  letter-spacing: 0.02rem;
+}
+
+.form-control {
+  border-top: 1px solid grey;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+  padding: 20px 5px;
+}
+
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  display: none;
+}
+
+.label {
+  align-items: center;
+  background: var(--toggle);
+  border-radius: 30px;
+  cursor: pointer;
+  display: flex;
+  height: 22px;
+  justify-content: flex-end;
+  padding: 3px;
+  width: 45px;
+}
+
+.ball {
+  background-color: var(--background);
+  border-radius: 50%;
+  height: 18px;
+  transition: var(--transition);
+  width: 18px;
+}
+
+#checkbox:checked + .label .ball {
+  transform: translateX(-20px);
+}
+
+.profile {
+  align-items: center;
+  background-color: var(--card-bg);
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+  padding: 20px 0 0;
+}
+
+.profile:hover {
+  background: var(--hover-state);
+}
+
+.profile-name {
+  display: flex;
+  gap: 20px;
+}
+
+.profile h1 {
+  font-size: 2.8rem;
+  margin-top: 20px;
+}
+
+.profile h3 {
+  color: var(--text);
+  font-weight: 400;
+  letter-spacing: 0.15rem;
+}
+
+.current-followers {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+/* border-top styles */
+.facebook {
+  border-top: 5px solid var(--Facebook);
+}
+.twitter {
+  border-top: 5px solid var(--Twitter);
+}
+.instagram {
+  border-top: 5px solid var(--Instagram);
+}
+.youtube {
+  border-top: 5px solid var(--YouTube);
+}
+
+.up p {
+  color: var(--Lime-Green);
+}
+
+.down p {
+  color: var(--Bright-Red);
+}
+
+.overview-today {
+  color: var(--text);
+  letter-spacing: 0.05rem;
+  margin: 40px 0 15px;
+}
+
+.overview {
+  background-color: var(--card-bg);
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 15px;
+  padding: 20px;
+}
+
+.overview:hover {
+  background: var(--hover-state);
+}
+
+.overview-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.overview-count {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.count-percent {
+  color: brown;
+  display: flex;
+  gap: 5px;
+}
+
+/* media queries */
+@media screen and (min-width: 800px) {
+  .main {
+    width: 80vw;
+  }
+
+  .header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .form-control {
+    gap: 15px;
+    border: none;
+  }
+
+  .social-profiles {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  }
+
+  .overview-today {
+    margin: 20px 0;
+  }
+
+  .all-overviews {
+    column-gap: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+    row-gap: 20px;
+  }
+
+  .overview {
+    margin: 0;
+  }
+}
+
+/* footer styles */
+
+.my-profile {
+  align-items: center;
+  background-color: var(--background);
+  color: var(--text);
+  display: flex;
+  font-size: 14px;
+  gap: 20px;
+  justify-content: center;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+}
+
+.my-profile > a {
+  cursor: pointer;
+  color: hsl(51, 79%, 45%);
+  text-decoration: none;
+}
+
+.my-profile-icons a {
+  color: var(--text);
+  cursor: pointer;
+  display: inline-block;
+  margin: 0 5px;
+}
+
+@media screen and (max-width: 500px) {
+  .my-profile {
+    font-size: 12px;
+  }
+
+  .my-profile-icons a:first-of-type,
+  .my-profile-icons a:last-of-type {
+    display: none;
+  }
+}
